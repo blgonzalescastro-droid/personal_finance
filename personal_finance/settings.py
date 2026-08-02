@@ -24,6 +24,11 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'drf_spectacular',
+    
+    'authentication',
+    'cards',
+    'transactions',
+    'goals',
 ]
 
 MIDDLEWARE = [
@@ -95,3 +100,18 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Cloudcash API',
+    'DESCRIPTION': 'REST API para gestión financiera personal',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
