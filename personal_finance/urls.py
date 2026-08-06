@@ -14,9 +14,9 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     # Modulos endpoints
-    #path('api/cards/', include('cards.urls')),
-    #path('api/transactions/', include('transactions.urls')),
-    #path('api/goals/', include('goals.urls')),
+    path('api/', include('cards.urls')),
+    path('api/', include('transactions.urls')),
+    path('api/', include('goals.urls')),
 
     # Swagger Documentation
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
